@@ -64,3 +64,9 @@ I am LLaMA, an AI chatbot trained to understand and respond to human language.
 Please ask something...
 >
 ```
+
+## GUI design
+
+For the gui design I'm going to use flet. The schematic design is shown below:
+
+<img src="img/gui_schema.png" alt="Gui schema" width=50%>

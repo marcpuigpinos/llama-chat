@@ -1,7 +1,7 @@
 from llama.client import ollama_client
 
 def main():
-    client = ollama_client()
+    client = ollama_client(model="llama3", address="127.0.0.1", port=11434 )
 
     while True:
         print("Please ask something...")

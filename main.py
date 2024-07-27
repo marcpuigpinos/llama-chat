@@ -1,23 +1,13 @@
-from llama.client import ollama_client
+import flet as ft
 
-import click
+from gui.main_window import MainWindow
 
-@click.command()
-@click.option("--model", required=True, help="Select one compatible model with Ollama. See https://ollama.com/")
-@click.option("--address", required=True, help="Address to the server running the model.")
-@click.option("--port", required=False, default=11434, help="Communication port with the server.")
-def main(model: str, address: str, port: int):
-    try:
-        client = ollama_client(model=model, address=address, port=port)
-    except Exception as error:
-        print(f"Ollama client could not be initialized: {error}")
-
-    while True:
-        print("Please ask something...")
-        message = input("> ")
-        print(client.ask_question(message))
-        print("")
-
+def main(page: ft.Page):
+    page.title = "Llama-chat"
+    page.theme_mode = "dark"
+    window = MainWindow("Llama-chat")
+    page.add(window)
 
 if __name__ == "__main__":
-    main()
+    ft.app(target=main)
+    # ft.app(target=main, view=ft.WEB_BROWSER)

@@ -2,10 +2,12 @@ import flet as ft
 
 from gui.main_window import MainWindow
 
+TITLE = "Llama-Chat"
+
 def main(page: ft.Page):
-    page.title = "Llama-chat"
+    page.title = TITLE
     page.theme_mode = "dark"
-    window = MainWindow("Llama-chat")
+    window = MainWindow(TITLE)
     page.add(window)
 
 if __name__ == "__main__":

@@ -21,26 +21,36 @@ class Chat(ft.UserControl):
         return self.__ollama.ask_question(message)
     
     def __send_button_on_click_event(self, e: ft.ControlEvent):
-        message = self.__textField.value
+        message = f"# You:\n{self.__textField.value}"
         self.__canvas.controls.append(
             ft.Container(
-                content=ft.Text(message, size=20),
-                bgcolor=ft.colors.GREEN_900,
+                #content=ft.Text(message, size=20),
+                content=ft.Markdown(value=message,
+                                    selectable=True,
+                                    extension_set="gitHubWeb",
+                                    code_theme="atom-one-dark"),
+                #bgcolor=ft.colors.GREEN_900,
                 padding=10,
-                border_radius=10
+                border_radius=10,
+                alignment=ft.alignment.center_left,
             )
         )
         self.__textField.value = ""
         self.__send_button.disabled = True
         self.update()
         response = self.__get_ollama_response(message)
+        response_fmt = f"# Chat:\n{response}"
         self.__canvas.controls.append(
             ft.Container(
                 #content=ft.Text(response, size=20),
-                content=ft.Markdown(value=response, selectable=True, extension_set="gitHubWeb", code_theme="atom-one-dark"),
+                content=ft.Markdown(value=response_fmt,
+                                    selectable=True,
+                                    extension_set="gitHubWeb",
+                                    code_theme="atom-one-dark"),
                 #bgcolor=ft.colors.BLUE_900,
                 padding=10,
-                border_radius=10
+                border_radius=10,
+                alignment=ft.alignment.center_left
             )
         )
         self.__send_button.disabled = False

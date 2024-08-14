@@ -6,6 +6,7 @@ Implement a simple web app to chat with Meta Llama3 model. The web app is done w
 
 * **Ollama website**: https://ollama.com/
 * **Ollama Python Library**: https://github.com/ollama/ollama-python
+* **Meta Llama3 website**: https://llama.meta.com/
 * **Flet website**: https://flet.dev/
 
 ## Installation of Ollama
@@ -16,7 +17,7 @@ As I use Linux, all the information here is related to Linux based systems. For 
 curl -fsSL https://ollama.com/install.sh | sh
 ```
 
-To install and run Llama3 model:
+To install and run Llama3 model(8B):
 
 ```console
 ollama run llama3

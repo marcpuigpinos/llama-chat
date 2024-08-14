@@ -1,7 +1,7 @@
 import flet as ft
 from gui.chat import Chat
 
-class MainWindow(ft.UserControl):
+class MainWindow(ft.Container):
     def __init__(self, title: str):
         super().__init__(expand=True)
         self.__title = ft.Text(title, size=50)
@@ -9,6 +9,4 @@ class MainWindow(ft.UserControl):
         self.__title_canvas = ft.Container(content=self.__title_row, alignment=ft.alignment.center)
         self.__chat = Chat()
         self.__main_window = ft.Column(controls=[self.__title_canvas, self.__chat], expand=True)
-
-    def build(self):
-        return ft.Container(content=self.__main_window, expand=True)
+        self.content = self.__main_window

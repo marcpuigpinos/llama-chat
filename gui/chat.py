@@ -3,7 +3,7 @@ import flet as ft
 from llama.client import ollama_client
 
 
-class Chat(ft.UserControl):
+class Chat(ft.Container):
     def __init__(self):
         super().__init__(expand=True)
         self.__canvas = ft.Column(expand=True, auto_scroll=True, scroll=True)
@@ -14,6 +14,7 @@ class Chat(ft.UserControl):
         self.__send_row_container = ft.Container(content=self.__send_row, expand=1)
         self.__chat = ft.Column(controls=[self.__canvas_container, self.__send_row_container], expand=True)
         self.__ollama = ollama_client()
+        self.content = self.__chat
 
     def __get_ollama_response(self, message: str):
         return self.__ollama.ask_question(message)
@@ -50,6 +51,3 @@ class Chat(ft.UserControl):
         )
         self.__send_button.disabled = False
         self.update()
-
-    def build(self):
-        return ft.Container(content=self.__chat, expand=True)

@@ -40,7 +40,7 @@ sudo systemctl stop ollama.service
 sudo systemctl disable ollama.service
 ```
 
-## Running the web app Llama-chat
+## Running llama-chat
 
 1. Clone the repository and enter the directory:
 

@@ -24,7 +24,7 @@ ollama run llama3
 
 This command installs llama3 and starts a terminal chat. To exit write */bye*. 
 
-At this point, Ollama and Llama3 model are sucssesfully installed. The next commands are to start, enable, stop and disable Ollama services.
+At this point, Ollama and Llama3 model are sucssesfully installed, so the Ollama service is enabled and started. The commands to start, enable, stop and disable the Ollama service are listed below in order to stop and start the service at will.
 
 * Enable and start the service:
 

@@ -1,11 +1,11 @@
 # llama-chat
 
-Implement a simple web app to chat with Meta Llama3 model. The web app is done with Flet and the communication with Llama3 model is done through Ollama python API. 
+Implement a simple web app to chat with Meta Llama3 model. The web app is done with Flet and the communication with Llama3 model is done through Ollama Python Library. 
 
 ## Links
 
 * **Ollama website**: https://ollama.com/
-* **Ollama Python API**: https://github.com/ollama/ollama-python
+* **Ollama Python Library**: https://github.com/ollama/ollama-python
 * **Flet website**: https://flet.dev/
 
 ## Installation of Ollama
@@ -49,7 +49,7 @@ git clone git@github.com:marcpuigpinos/llama-chat.git
 cd llama-chat
 ```
 
-2. Create a python virtual enviroment:
+2. Create a Python virtual enviroment:
 
 ```console
 python -m venv .env

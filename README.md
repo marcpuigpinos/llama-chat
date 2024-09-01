@@ -20,7 +20,7 @@ curl -fsSL https://ollama.com/install.sh | sh
 To install and run Llama3 model(8B):
 
 ```console
-ollama run llama3
+ollama run llama3.1
 ```
 
 This command installs llama3 and starts a terminal chat. To exit write */bye*. 
